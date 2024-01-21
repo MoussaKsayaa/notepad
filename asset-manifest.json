@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/notepad/static/css/main.51a0421a.css",
+    "main.js": "/notepad/static/js/main.0ab3fecc.js",
+    "index.html": "/notepad/index.html",
+    "main.51a0421a.css.map": "/notepad/static/css/main.51a0421a.css.map",
+    "main.0ab3fecc.js.map": "/notepad/static/js/main.0ab3fecc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.51a0421a.css",
+    "static/js/main.0ab3fecc.js"
+  ]
+}
