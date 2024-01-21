@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import '@fortawesome/fontawesome-free'
 import {library} from '@fortawesome/fontawesome-svg-core'
@@ -55,13 +56,13 @@ function giveMeColor() {
 }
 
 export default function MainList({notes, setNotes, setIsSaved}) {
-  window.onload = () => {
+  useEffect(() => {
     let savedNotes = JSON.parse(window.localStorage.getItem('savedNotes'));
     if (savedNotes !== null && savedNotes.length !== 0) {
       setNotes(savedNotes);
     }
     setIsSaved(true);
-  }
+  },[])
   let notesList = [];
   notes.map((note) => {
     return notesList.push(
