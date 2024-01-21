@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import './index.css';
+import Header from './components/Header';
+import MainList from './components/MainList';
 
-function App() {
+export default function App() {
+  const [notes, setNotes] = useState([{id: 1, title: '', text: '', bgColor: '#fdf2b3'}]);
+  const [isSaved, setIsSaved] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header isSaved={isSaved} setIsSaved={setIsSaved} notes={notes}/>
+      <MainList notes={notes} setNotes={setNotes} setIsSaved={setIsSaved} />
     </div>
-  );
+  )
 }
-
-export default App;

@@ -1,13 +1,172 @@
+* {
+  box-sizing: border-box;
+}
 body {
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: #fafafa;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header .container {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.header .icon {
+  font-size: 25px;
+  cursor: pointer;
+}
+.header h1 {
+  margin: 10px 0;
+}
+.header .nav {
+  display: none;
+}
+.header .save-icon {
+  margin-left: auto;
+  margin-right: 10px;
+  cursor: pointer;
+  position: relative;
+  font-size: 30px;
+  color: #1f84d1;
+}
+.header .save-icon::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3px;
+  width: 0%;
+  transition: width 0.8s ease;
+  background-color: #1f84d1;
+  border-radius: 20px
+}
+.header .save-icon.active::before {
+  width: 100%;
+}
+
+.main-list .notes {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  min-height: calc(100vh - 110px);
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.main-list .notes .add-note,
+.main-list .notes .note {
+  float: left;
+  background-color: #fdf2b3;
+  color: black;
+  width: calc((100% / 4) - 11.24px);
+  height: 230px;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 0 4px #ccc;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .main-list .notes .add-note,
+  .main-list .notes .note {
+    width: calc((100% / 3) - 11.24px);
+  }
+}
+@media (max-width: 768px) {
+  .main-list .notes .add-note,
+  .main-list .notes .note {
+    width: calc((100% / 2) - 11.24px);
+  }
+}
+@media (max-width: 567px) {
+  .main-list .notes .add-note,
+  .main-list .notes .note {
+    width: calc(100% - 11.24px);
+  }
+}
+
+.main-list .notes .note:hover {
+  box-shadow: 0 0 10px #ccc;
+}
+.main-list .notes .note input {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 10px;
+  width: calc(100% - 10px);
+  height: 10%;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.main-list .notes .note textarea {
+  display: block;
+  resize: none;
+  width: 100%;
+  height: 90%;
+  background-color: transparent;
+  border: none;
+  overflow-y: auto;
+}
+
+.main-list .notes .note input:focus,
+.main-list .notes .note textarea:focus {
+  outline: none;
+}
+.main-list .notes .note textarea::placeholder,
+.main-list .notes .note input::placeholder {
+  opacity: 1;
+  transition: 0.3s ease;
+}
+.main-list .notes .note textarea:focus::placeholder,
+.main-list .notes .note input:focus::placeholder {
+  opacity: 0;
+}
+
+.note .remove-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: color 0.4s linear;
+  color: rgba(255, 68, 0, 0.39)
+}
+
+.note .remove-icon:hover {
+  color: red;
+}
+
+.main-list .notes .add-note {
+  background-color: #ebebeb;
+  color: #7777777a;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
