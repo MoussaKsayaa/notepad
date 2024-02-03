@@ -8,6 +8,7 @@ export default function App() {
   const [isSaved, setIsSaved] = useState(false);
   return (
     <div className="app">
+    Hello from github on the fly
       <Header isSaved={isSaved} setIsSaved={setIsSaved} notes={notes}/>
       <MainList notes={notes} setNotes={setNotes} setIsSaved={setIsSaved} />
     </div>
